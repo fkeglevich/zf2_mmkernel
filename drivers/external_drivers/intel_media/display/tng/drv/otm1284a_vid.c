@@ -693,8 +693,8 @@ static int otm1284a_vid_set_brightness(struct mdfld_dsi_config *dsi_config,
 	static void __iomem *bl_en_mmio;
 
 	/* Re-assign the minimum brightness value to 15 */
-	if (level > 0 && level <= 15)
-		level = 15;
+	//if (level > 0 && level <= 15)
+	//	level = 15;
 
 	reg_level = ~level & 0xFF;
 	pwmctrl.part.pwmswupdate = 0x1;
@@ -731,7 +731,7 @@ static int otm1284a_vid_set_brightness(struct mdfld_dsi_config *dsi_config,
 		DRM_ERROR("Cannot map pwmctrl\n");
 	}
 
-	printk("[DISP] brightness level = %d\n", level);
+	//printk("[DISP] brightness level = %d\n", level);
 
 	return 0;
 }
