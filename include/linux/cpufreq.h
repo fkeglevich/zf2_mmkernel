@@ -440,4 +440,11 @@ void cpufreq_frequency_table_put_attr(unsigned int cpu);
 
 void set_cpufreq_boost(unsigned long val);
 
+enum govinuse{NONE=0,THESSJACTIVE=1,YANKACTIVE=2};
+typedef enum govinuse whichgov;
+
+extern whichgov ta_active;
+void set_cpufreq_boost_ta(unsigned int enable);
+void set_cpufreq_boost_ya(unsigned int enable);
+
 #endif /* _LINUX_CPUFREQ_H */
