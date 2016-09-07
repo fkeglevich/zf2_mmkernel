@@ -126,7 +126,6 @@ struct cpufreq_yankactive_tunables {
 
 /* For cases where we have single governor instance for system */
 static struct cpufreq_yankactive_tunables *common_tunables;
-static struct kobject *get_governor_parent_kobj(struct cpufreq_policy *policy);
 static struct attribute_group *get_sysfs_attr(void);
 
 extern whichgov ta_active;
@@ -1485,14 +1484,6 @@ struct cpufreq_governor cpufreq_gov_yankactive = {
 
 static void cpufreq_yankactive_nop_timer(unsigned long data)
 {
-}
-
-static struct kobject *get_governor_parent_kobj(struct cpufreq_policy *policy)
-{
-	if (have_governor_per_policy())
-		return &policy->kobj;
-	else
-		return cpufreq_global_kobject;
 }
 
 static int __init cpufreq_yankactive_init(void)
