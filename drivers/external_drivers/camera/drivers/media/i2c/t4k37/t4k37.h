@@ -258,10 +258,10 @@ static struct tsb_reg const t4k37_PREVIEW_4112x2320_30fps[] = {
 	{TSB_8BIT, 0x0303, 0x06},	// -/-/-/-/VT_SYS_CLK_DIV[3:0];
 	{TSB_8BIT, 0x0305, 0x03},	// -/-/-/-/-/PRE_PLL_CLK_DIV[2:0];
 	{TSB_8BIT, 0x030B, 0x01},	// -/-/-/-/OP_SYS_CLK_DIV[3:0];
-	{TSB_8BIT, 0x0340, 0x0C},	// FR_LENGTH_LINES[15:8];
-	{TSB_8BIT, 0x0341, 0x48},	// FR_LENGTH_LINES[7:0];
-	{TSB_8BIT, 0x0342, 0x11},	// LINE_LENGTH_PCK[15:8];
-	{TSB_8BIT, 0x0343, 0xE8},	// LINE_LENGTH_PCK[7:0];
+	{TSB_8BIT, 0x0340, 0x0A},	// FR_LENGTH_LINES[15:8];
+	{TSB_8BIT, 0x0341, 0xA0},	// FR_LENGTH_LINES[7:0];
+	{TSB_8BIT, 0x0342, 0x14},	// LINE_LENGTH_PCK[15:8];
+	{TSB_8BIT, 0x0343, 0xAE},	// LINE_LENGTH_PCK[7:0];
 	{TSB_8BIT, 0x0346, 0x01},	// Y_ADDR_START[15:8];
 	{TSB_8BIT, 0x0347, 0x90},	// Y_ADDR_START[7:0];
 	{TSB_8BIT, 0x034A, 0x0A},	// Y_ADDR_END[15:8];
@@ -1841,8 +1841,8 @@ struct tsb_resolution t4k37_res_preview[] = {
 				 .fps = 30,
 				 //.fps = 28,
 				 //.fps = 10,
-				 .pixels_per_line = 0x11E8,
-				 .lines_per_frame = 0x0C48,	// 30fps
+				 .pixels_per_line = 0x14AE,
+				 .lines_per_frame = 0x0AA0,	// 30fps
 				 //.lines_per_frame = 0x0D28,	// 28fps
 				 //.lines_per_frame = 0x126C,	// 10fps
 			},
