@@ -35,9 +35,9 @@ ui_print "$(file_getprop /tmp/anykernel/anykernel.sh kernel.string)";
 ui_print " =============================== ";
 ui_print "   _____ _               __  __  ";
 ui_print "  |  ___| | __ _ _ __ ___\ \/ /  ";
-ui_print "  | |_  | |/ _` | '__/ _ \\  /   ";
+ui_print "  | |_  | |/ _* | *__/ _ \\  /   ";
 ui_print "  |  _| | | (_| | | |  __//  \   ";
-ui_print "  |_|   |_|\__,_|_|  \___/_/\_\  ";
+ui_print "  |_|   |_|\__*_|_|  \___/_/\_\  ";
 ui_print "                                 ";
 ui_print " =============================== ";
 
