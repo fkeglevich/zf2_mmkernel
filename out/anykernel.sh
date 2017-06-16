@@ -69,6 +69,8 @@ write_boot() {
 ## AnyKernel install
 dump_boot;
 
+cp -r /tmp/anykernel/modules/* $ramdisk/lib/
+
 write_boot;
 
 ## end install
