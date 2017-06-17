@@ -69,9 +69,11 @@ write_boot() {
 ## AnyKernel install
 dump_boot;
 
-cp -r /tmp/anykernel/modules/* $ramdisk/lib/
+cd $ramdisk;
+rm ./lib/modules/*.ko;
+cp -af /tmp/anykernel/modules/*.ko ./lib/modules/;
+chmod 0644 ./lib/modules/*.ko;
 
 write_boot;
 
 ## end install
-

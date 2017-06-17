@@ -102,6 +102,7 @@ fi
 clear
 echo "--------------------PACKING-------------------------"
 echo "Starting Packing To Recovery Flashable Zip"
+rm -rf out/modules/*
 find . -name '*.ko' -exec cp {} out/modules/ \;
 cd out/
 echo "Removing Old Files"
@@ -127,6 +128,6 @@ echo "Completion Time :"
 echo "$runtime sec\n"
 
 echo "------------------- CLEANING------------------------"
-make clean
+#make clean
 echo "----------------------DONE--------------------------"
 
