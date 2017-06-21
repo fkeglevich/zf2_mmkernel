@@ -103,16 +103,18 @@ clear
 echo "--------------------PACKING-------------------------"
 echo "Starting Packing To Recovery Flashable Zip"
 rm -rf out/modules/*
+find . -name '*.ko' -exec strip --strip-debug {} \;
+find . -name '*.ko' -exec ./scripts/sign-file sha256 ./signing_key.priv ./signing_key.x509 {} \;
 find . -name '*.ko' -exec cp {} out/modules/ \;
 cd out/
 echo "Removing Old Files"
-rm -rf bzImage *.zip
+rm -rf zImage *.zip
 sleep $SLEEP
 echo "Copying bzImage"
-mv ../arch/x86/boot/bzImage bzImage
+mv ../arch/x86/boot/bzImage zImage
 sleep $SLEEP
 echo "Compiling FlareX_"$VER".zip"
-find . -type f -exec zip FlareX_"$VER".zip {} +
+find . -type f -exec zip -9 FlareX_"$VER".zip {} +
 nowf=$(date +"%T")
 cd ..
 echo "Current Date : $NOW"
@@ -128,5 +130,5 @@ echo "Completion Time :"
 echo "$runtime sec\n"
 
 echo "------------------- CLEANING------------------------"
-make clean
+#make clean
 echo "----------------------DONE--------------------------"
