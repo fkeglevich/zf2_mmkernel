@@ -130,5 +130,5 @@ echo "Completion Time :"
 echo "$runtime sec\n"
 
 echo "------------------- CLEANING------------------------"
-#make clean
+make clean && make mrproper
 echo "----------------------DONE--------------------------"
