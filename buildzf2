@@ -131,4 +131,5 @@ echo "$runtime sec\n"
 
 echo "------------------- CLEANING------------------------"
 make clean && make mrproper
+touch out/modules/placeholder
 echo "----------------------DONE--------------------------"
