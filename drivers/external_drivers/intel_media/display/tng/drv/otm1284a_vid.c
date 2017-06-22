@@ -412,11 +412,11 @@ static int send_mipi_cmd_orise(struct mdfld_dsi_pkg_sender * sender,
 
 	sender->status = MDFLD_DSI_PKG_SENDER_FREE;
 
-	if (cmd->gamma_enable) {
+//	if (cmd->gamma_enable) {
 		mdfld_dsi_send_mcs_short_lp(sender, cmd->commands1[0], cmd->commands1[1], 1, MDFLD_DSI_SEND_PACKAGE);
 		for (i=0; i<(cmd->len2 - 1); i++)
 			mdfld_dsi_send_mcs_short_lp(sender, cmd->commands2[0], cmd->commands2[i+1], 1, MDFLD_DSI_SEND_PACKAGE);
-	} else {
+/*	} else {
 
 		for (i=0; i<(cmd->len2 - 1); i++) {
 			mdfld_dsi_send_mcs_short_lp(sender, cmd->commands1[0], cmd->commands1[1]+i, 1, MDFLD_DSI_SEND_PACKAGE);
@@ -435,7 +435,7 @@ static int send_mipi_cmd_orise(struct mdfld_dsi_pkg_sender * sender,
 		printk("\n");
 #endif
 	}
-
+*/
 	if (err != 0 || sender->status) {
 		printk("[DISP] %s : sent failed with status=%d\n", __func__, sender->status);
 		return -EIO;
